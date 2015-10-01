@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <meta charset="utf-8">
+    <title>Placholder Styling</title>
+    <!-- This feature must be implemented with browser prefixes. http://caniuse.com/#feat=css-placeholder -->
+    <style>
+
+        input::-webkit-input-placeholder {
+            color: rgba(0,0,0,1);
+            font-weight:bold;
+
+        }
+        input::-moz-placeholder {
+            color: rgba(0,0,0,1); /* FF still applies an opacity setting of approximately 55% on top of this */
+            font-weight:bold;
+        }
+        input:-moz-placeholder {   /* Older versions of Firefox */
+            color: black;
+            font-weight:bold;
+        }
+        input:-ms-input-placeholder { 
+            color: rgba(0,0,0,1);
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Styling</h1>
+    <p>By default, browsers apply an opacity setting to placeholder text to input fields that may cause the text to have insufficient contrast with the background color. The CSS of placeholder text can be modified, but it requires vendor specific CSS prefixes.</p>
+    <h2>Code</h2>
+    <pre>
+&lt;style&gt;
+
+    input::-webkit-input-placeholder {
+        color: rgba(0,0,0,1);
+        font-weight:bold;
+    }
+
+    input::-moz-placeholder {
+        color: rgba(0,0,0,1); /* FF still applies an opacity setting of approximately 55% on top of this */
+        font-weight:bold;
+    }
+
+    input:-moz-placeholder { /* Older versions of Firefox */
+        color: black;
+        font-weight:bold;
+    }
+
+    input:-ms-input-placeholder {
+        color: rgba(0,0,0,1);
+        font-weight:bold;
+}
+
+&lt;/style&gt;
+
+&lt;label for=&quot;fn&quot;&gt;First name&lt;/label&gt;&lt;input id=&quot;fn&quot; placeholder=&quot;First Name&quot; type=&quot;text&quot; /&gt;
+</pre>
+<h2>Implementation</h2>
+<label for="fn">First name</label> <input id="fn" placeholder="First Name" type="text" />
+<h2>Testing Notes</h2>
+<p>This has been tested and works in the following:</p>
+<ul>
+    <li>FF 40.0 (OS X and Windows) - Firefox still applies an opacity setting of approximately 55% on top of this. Even with this it is possible to meet WCAG 2.0 Level AA contrast requirements.</li>
+    <li>Chrome 44 (OS X and Windows)</li>
+    <li>Safari 8 (OS X)</li>
+    <li>Safari (iOS 8.3)</li>
+</ul>
+</body>
+</html>
