@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="script.js"></script>
+  <link href="styles.css" type="text/css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Autocomplete Select Box Example</title>
+</head>
+<body>
+  <p>Note: the autocomplete is case sensitive for searching for U.S. States.</p>
+  <p>Note: the &quot;suggestions&quot; text could be visually hidden and only conveyed to screen reader users.</p>
+  <div id="suggestCombo">
+    <div id="description" class="visually-hidden">As suggestions become available, browse the suggested results using the up and down arrow keys. Enter selects the suggestion.</div>
+    <label for="f">State</label><input id="f" role="combobox" aria-owns="list" aria-autocomplete="list" aria-expanded="false" tabindex="0"  aria-describedby="description" aria-activedescendent="#list"  />
+    <div role="status" id="total">0 suggestions</div>
+    <div id="states">
+      <ul id="list" role="listbox">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
