@@ -1,19 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Resizable fonts in iOS UIWebView</title>
     <style>
 
-        /* This style must be applied to an element without existing styles (e.g. div, span). Otherwise, it must be applied to a child span */
         .apple-heading {
-            font: -apple-system-headline; /* hook into iOS Dynamic Type */
-            font-family:Arial,sans-serif; /* (optional) use the font family you want here. This is highly recommended for non-iOS displays */
-            font-weight:bold; /* (optional) use the font weight you want here */
-            /* DO NOT override the font-size here */
-        }
-
-        /* This style must be applied to an element without existing styles (e.g. div, span). Otherwise, it must be applied to a child span */
-        .apple-heading-resizable {
             font: -apple-system-headline; /* hook into iOS Dynamic Type */
             font-family:Arial,sans-serif; /* (optional) use the font family you want here. This is highly recommended for non-iOS displays */
             font-weight:bold; /* (optional) use the font weight you want here */
@@ -45,8 +38,8 @@ List of available Apple fonts
 
 </head>
 <body>
-    <h1><span class="apple-heading">Heading text goes here</span></h1>
+    <h1 class="apple-heading">Heading text goes here</h1>
     <p>If you want to override the size you can modify the Apple defined size through inheritance in a child span.</p>
-    <h1><span class="apple-heading-resizable"><span class="apple-heading-size">Resizable heading text goes here</span></span></h1>
+    <h1 class="apple-heading"><span class="apple-heading-size">Resizable heading text goes here</span></h1>
 </body>
 </html>

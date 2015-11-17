@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Resizable vs. Non-Resizable Fonts in iOS UIWebView</title>
+  <style>
+
+
+    .body-apple{
+      font:-apple-system-body;
+      font-family: Arial, sans-serif;
+    }
+    .body{
+      font-family: Arial, sans-serif;
+    }
+    .body-size{
+      font-size: 1.0em;
+    }
+
+    .headline-apple{
+      font:-apple-system-headline;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .headline{
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .headline-size{
+      font-size: 1.6em;
+    }
+
+    .sub-headline-apple{
+      font:-apple-system-headline;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .sub-headline{
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .sub-headline-size{
+      font-size: 1.2em;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+    td {
+      padding:3px;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Resizable vs. Non-Resizable Fonts in iOS UIWebView</h1>
+  <p>This page must be viewed on an iOS device to see the effect. To adjust the text size</p>
+  <ol>
+    <li>Go to “Settings”</li>
+    <li>Select “General”</li>
+    <li>Select “Accessibility”</li>
+    <li>Select “Larger Text”</li>
+    <li>Set the text size, and optionally allow “Larger Accessibility Sizes” to select larger text</li>
+  </ol>
+  <p>The resizeable fonts have a hook into Apple's iOS system fonts, but then override aspects of the font to change the font-family, boldness, and size. Note: the font-size cannot be overridden on the element with the hook into Apple's fonts. font-size must be applied to a child element.</p>
+  <table>
+    <caption>Demonstrating Resizable vs. Non-Resizable fonts on iOS</caption>
+    <tr>
+     <th scope="col">Resizable Font</th>
+     <th scope="col">Non-Resizable Font</th>
+   </tr>
+   <tr>
+     <td><p class="body-apple"><span class="body-size">body</span></p></td>
+     <td><p class="body"><span class="body-size">body</span></p></td>
+   </tr>
+   <tr>
+     <td><h2 class="headline-apple"><span class="headline-size">headline</span></h2></td>
+     <td><h2 class="headline"><span class="headline-size">headline</span></h2></td>
+   </tr>
+   <tr>
+    <td><h3 class="sub-headline-apple"><span class="sub-headline-size">sub-headline</span></h3></td>
+    <td><h3 class="sub-headline"><span class="sub-headline-size">sub-headline</span></h3></td>
+  </tr>
+
+</table>
+<h2>All iOS Dynamic Type Fonts</h2>
+<ul>
+  <li>-apple-system-body</li>
+  <li>-apple-system-headline</li>
+  <li>-apple-system-subheadline</li>
+  <li>-apple-system-caption1</li>
+  <li>-apple-system-caption2</li>
+  <li>-apple-system-footnote</li>
+  <li>-apple-system-short-body</li>
+  <li>-apple-system-short-headline</li>
+  <li>-apple-system-short-subheadline</li>
+  <li>-apple-system-short-caption1</li>
+  <li>-apple-system-short-footnote</li>
+  <li>-apple-system-tall-body</li>
+</ul>
+</body>
+</html>
