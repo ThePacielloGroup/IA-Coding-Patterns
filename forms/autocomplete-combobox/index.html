@@ -12,10 +12,11 @@
   <p>Note: the &quot;suggestions&quot; text could be visually hidden and only conveyed to screen reader users.</p>
   <div id="suggestCombo">
     <div id="description" class="visually-hidden">As suggestions become available, browse the suggested results using the up and down arrow keys. Enter selects the suggestion.</div>
-    <label for="f">State</label><input id="f" role="combobox" aria-owns="list" aria-autocomplete="list" aria-expanded="false" tabindex="0"  aria-describedby="description" aria-activedescendent="#list"  />
-    <div role="status" id="total">0 suggestions</div>
+    <label for="f">State</label>
+    <input id="f" role="combobox" aria-owns="listOptions" aria-autocomplete="list" aria-expanded="false" tabindex="0"  aria-describedby="description" aria-activedescendant="" />
+    <div role="status" aria-live="polite" id="total">0 suggestions</div>
     <div id="states">
-      <ul id="list" role="listbox">
+      <ul id="listOptions" role="listbox">
       </ul>
     </div>
   </div>
