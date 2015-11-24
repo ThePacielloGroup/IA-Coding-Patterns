@@ -1,28 +1,28 @@
 label {
-  display:block;
+  display: block;
 }
 input {
-  width:150px;
+  width: 150px;
 }
 #states {
-  display:none;
-  border:1px solid black;
-  width:155px;
+  display: none;
+  border: 1px solid black;
+  width: 155px;
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
-#list {
-  list-style:none;
+#listOptions {
+  list-style: none;
 }
-
 
 #total {
-  display:inline;
-  
+  display: inline;
 }
 
 .selected {
-  background-color:#00c;
-  color:#fff;
+  background-color: #00c;
+  color: #fff;
 }
 
 .visually-hidden {

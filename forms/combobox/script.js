@@ -25,12 +25,12 @@ var states =[
 function updateStateList(){
   var matchedStates = states.find(jQuery('#f').val());
   matchedStates.sort();
-  jQuery('#list').empty();
+  jQuery('#listOptions').empty();
   currentSelected = -1;
   var arrayLength = matchedStates.length;
   for (var i = 0; i < arrayLength; i++) {
 
-    jQuery('#list').append('<li role="option" tabindex="-1">' + matchedStates[i] + '</li>');
+    jQuery('#listOptions').append('<li role="option" tabindex="-1" id="stateId'+matchedStates[i]+'">' + matchedStates[i] + '</li>');
   }
   if(matchedStates.length > 1){
     jQuery('#total').html('<span>' + matchedStates.length + ' suggestions</span>');
@@ -48,7 +48,7 @@ function updateStateList(){
   jQuery('li[role="option"]').click(function(){
     jQuery('#f').val(jQuery(this).eq(currentSelected).text());
     jQuery('#f').focus();
-    jQuery('#list').empty();
+    jQuery('#listOptions').empty();
     jQuery('#f').attr('aria-expanded','false');
     currentSelected = -1;
     jQuery('#states').hide();
@@ -72,42 +72,54 @@ $( document ).ready(function() {
     if (evt.which == 38){
       if(currentSelected == -1){
         jQuery('li[role="option"]').eq(totalMatched - 1).addClass("selected");
+        jQuery('li[role="option"]').eq(totalMatched - 1).attr("aria-selected","true");
         jQuery('li[role="option"]').eq(totalMatched - 1).focus();
         currentSelected=totalMatched - 1;
       } else if (currentSelected == 0){
         jQuery('li[role="option"]').eq(currentSelected).removeClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected).attr("aria-selected","false");
         jQuery('#f').focus();
         var len = jQuery('#f').val().length;
         jQuery('#f')[0].setSelectionRange(0, len);
         currentSelected = -1;
       } else if(currentSelected + 1 <= totalMatched){
         jQuery('li[role="option"]').eq(currentSelected).removeClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected).attr("aria-selected","false");
         jQuery('li[role="option"]').eq(currentSelected - 1).addClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected - 1).attr("aria-selected","true");
         jQuery('li[role="option"]').eq(currentSelected - 1).focus();
         currentSelected -= 1;
-      } 
-
+      }
+      jQuery('#f').attr("aria-activedescendant","stateId" + jQuery('li[role="option"]').eq(currentSelected).text());
+      evt.preventDefault();
     }
 
     // down     
     if (evt.which == 40){
       if(currentSelected == -1){
         jQuery('li[role="option"]').eq(0).addClass("selected");
+        jQuery('li[role="option"]').eq(0).attr("aria-selected","true");
         jQuery('li[role="option"]').eq(0).focus();
         setTimeout(function() {jQuery('li[role="option"]').eq(0).focus();}, 1);
         currentSelected=0;
       } else if(currentSelected + 1 < totalMatched){
         jQuery('li[role="option"]').eq(currentSelected).removeClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected).attr("aria-selected","false");
         jQuery('li[role="option"]').eq(currentSelected + 1).addClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected + 1).attr("aria-selected","true");
         jQuery('li[role="option"]').eq(currentSelected + 1).focus();
         setTimeout(function() {jQuery('li[role="option"]').eq(currentSelected).focus();}, 1);
         currentSelected += 1;
       } else if (currentSelected + 1 == totalMatched){
         jQuery('li[role="option"]').eq(currentSelected).removeClass("selected");
+        jQuery('li[role="option"]').eq(currentSelected).attr("aria-selected","false");
         jQuery('li[role="option"]').eq(0).addClass("selected");
+        jQuery('li[role="option"]').eq(0).attr("aria-selected","true");
         jQuery('li[role="option"]').eq(0).focus();
         currentSelected = 0;
       }
+      jQuery('#f').attr("aria-activedescendant","stateId" + jQuery('li[role="option"]').eq(currentSelected).text());
+      evt.preventDefault();
     }
 
     // enter
@@ -115,11 +127,23 @@ $( document ).ready(function() {
       if(currentSelected != -1){
         jQuery('#f').val(jQuery('li[role="option"]').eq(currentSelected).text());
         jQuery('#f').focus();
-        jQuery('#list').empty();
+        jQuery('#listOptions').empty();
         jQuery('#f').attr('aria-expanded','false');
         currentSelected = -1;
         jQuery('#states').hide();
+        jQuery('#f').attr("aria-activedescendant","");
       }
+    }
+
+    // escape
+    if (evt.which == 27){
+        jQuery('#f').focus();
+        jQuery('#listOptions').empty();
+        jQuery('#f').attr('aria-expanded','false');
+        currentSelected = -1;
+        jQuery('#states').hide();
+        jQuery('#f').attr("aria-activedescendant","");
+        evt.preventDefault();
     }
   });
 
