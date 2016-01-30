@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="script.js"></script>
+    <meta charset="utf-8">
+    <title>Cloze (Fill-in the Blank) Question</title>
+</head>
+<body>
+    <div id="q1">
+        <h1>Cloze (Fill-in the Blank) Question</h1>
+        <p>Making a fill-in-the-blank question accessible to screen reader users has many challenges. Because of the way screen reading software reads out the function of each UI element, screen reader users have a challenging time understanding the sentence as a whole. As they are reading the sentence, they will hear information like &quot;combobox collapsed&quot; each time they come to a place they need to make a choice.</p>
+        <p>This implementation gives the screen reader users alternative ways of hearing the sentence. There are two alternatives.</p>
+        <ul>
+            <li>Hear the sentence read, inserting the label for the input along with the chosen word. This way the screen reader user knows when they are hearing one of the word choice locations.</li>
+            <li>Hear the sentence read as it would be without any of the extra information about the UI</li>
+        </ul>
+        <p>In this particular example, the first rendering (with the select labels inserted) is placed in an ARIA live region so that as the user changes selections they can hear the new sentence. The new sentence will only be reconstructed when the user focuses on or off of one of the select elements. You could set it to reconstruct the sentence every time a select input value is changed, but that might get to be too verbose.</p>
+        <p>Both of these reconstructions could be made available only to screen reader users and not made visible to sighted users.</p>
+        <h1>Complete the following sentence.</h1>
+        <p>
+            <span id="p1" data-phrase="The">The</span>
+            <select id="p2" name="n2" aria-label="Word 1">
+                <option>&nbsp;</option>
+                <option>boy</option>
+                <option>car</option>
+            </select>
+            <span id="p3">went to the</span>
+            <select id="p4" name="n4" aria-label="Word 2">
+                <option>&nbsp;</option>
+                <option>store</option>
+                <option>moon</option>
+            </select>
+            <span id="p5">to buy a</span>
+            <select id="p6" name="n6" aria-label="Word 3">
+                <option>&nbsp;</option>
+                <option>rock</option>
+                <option>pear</option>
+            </select>
+            <span id="p7">in order to help a</span>
+            <select id="p8" name="n8" aria-label="Word 4">
+                <option>&nbsp;</option>
+                <option>friend</option>
+                <option>phone</option>
+            </select>
+            <span id="p9">.</span>
+        </p>
+    </div>
+    <h2>Constructed answer for screen reader users</h2>
+    <h3>Sentence with placeholder text</h3>
+    <div aria-live="polite" aria-relevant="text" aria-atomic="true">
+        <p id="complete-phrase-placeholder"></p>
+    </div>
+    <h3>Sentence without placeholder text</h3>
+    <p id="complete-phrase-clean"></p>
+</body>
+</html>
