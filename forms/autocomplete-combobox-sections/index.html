@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="Suggested Search">
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="script.js"></script>
+  <link href="styles.css" type="text/css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Autocomplete Select Box With Sections Example</title>
+</head>
+<body>
+  <p>Note: the &quot;suggestions&quot; text could be visually hidden and only conveyed to screen reader users.</p>
+  <p>Note: the results are returned with "headings" to group information. This information is conveyed through aria-describedby.</p>
+  <div id="suggestCombo">
+    <div id="description" class="visually-hidden">As suggestions become available, browse the suggested results using the up and down arrow keys. Enter selects the suggestion.</div>
+    <label for="f">Country</label>
+    <input id="f" role="combobox" aria-owns="listOptions" aria-autocomplete="list" aria-expanded="false" tabindex="0"  aria-describedby="description" aria-activedescendant="" />
+    <div role="status" aria-live="polite" id="total">0 suggestions</div>
+    <div id="countries">
+      <ul id="listOptions" role="listbox">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

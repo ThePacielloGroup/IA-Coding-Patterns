@@ -1,0 +1,49 @@
+label {
+  display: block;
+}
+input {
+  width: 250px;
+}
+#countries {
+  display: none;
+  border: 1px solid black;
+  width: 255px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+#listOptions {
+  list-style: none;
+}
+
+#listOptions li {
+  margin-left:0;
+}
+
+.list-heading {
+  font-weight:bold;
+}
+
+#listOptions li[role="option"] {
+  margin-left:10px;
+}
+
+#total {
+  display: inline;
+}
+
+.selected {
+  background-color: #00c;
+  color: #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);  /* for Internet Explorer */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
