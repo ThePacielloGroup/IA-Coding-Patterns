@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="script.js"></script>
+  <link href="styles.css" type="text/css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Autocomplete Select Box Example (Inaccessible)</title>
+</head>
+<body>
+<p>This is an example of an inaccessible autocomplete.</p>
+  <p>Note: the autocomplete is case sensitive for searching for U.S. States.</p>
+  <div id="suggestCombo">
+
+    <label for="f">State</label>
+    <input id="f" tabindex="0"  type="text" />
+    <button>Go</button>
+<p>Screen reader users will not be able to fully interact with this content.</p>
+    <div id="states">
+      <ul id="listOptions" role="listbox">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
