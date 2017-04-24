@@ -24,10 +24,10 @@ function toggleCheckbox(control){
 	var image = $(control).find("img").first();
 	if($(control).attr('aria-checked') == 'true'){
 		$(control).attr('aria-checked', 'false');
-		$(image).attr("src", "./ucheckbox.png");
+		$(image).attr("src", "./checkbox-unchecked.png");
 	} else {
 		$(control).attr('aria-checked', 'true');
-		$(image).attr("src", "./checkbox.png");
+		$(image).attr("src", "./checkbox-checked.png");
 	}
 }
 
