@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skip Navigation Good Example - Company History - About Us - Accessibility Interactive</title>
+<style>
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section, menu,
+time, mark, audio, video {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+body {
+	font-size:16px;
+}
+a {
+	color:#151515;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding:.3rem;
+}
+a:focus, a:hover {
+	background-color:#151515;
+	color:#fff;
+	}
+h1, h2, h3, h4, h5, h6 {
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding:1rem;
+	padding-left:0;
+}
+p { 
+	padding-bottom:1rem;
+}
+a#skip {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow:hidden;
+	height:1px;
+	Width:1px;
+}
+a#skip:active, a#skip:focus {
+    clip: auto;
+    height: auto;
+    overflow: visible;
+    position: static !important;
+	display:block; /* adjustment for custom focus indicator */
+	width: 10rem; /* adjustment for custom focus indicator */
+}
+header {
+	width: 100%;
+	background-color:#ccc;
+	}
+div.center {
+	margin: 0 auto;
+	max-width: 75rem;
+	min-height: 189px;
+}
+div.logo {
+	float:left;
+	}
+div.logo img{
+	margin: 1rem;
+	}
+p.company-name {
+	float:left;
+	font-weight:bolder;
+	font-size:180%;
+	margin-top:4rem;
+}
+p.company-name span.indent {
+	display:block;
+	margin-left:4rem;
+}
+nav.main {
+	float:right;
+	margin-top:7.8rem;
+	}
+nav.main ul li {
+	display:block;
+	float:left;
+	list-style-type: none;
+	padding:0;
+	}
+nav.main ul li a{
+	display:block;
+	text-decoration:none;
+	font-weight:bold;
+	padding: 1.25rem;
+	padding-left:1.5rem;
+	padding-right:1.5rem;
+	background-color:#7E7E7E;
+	font-size:120%;
+	}
+nav.main ul li p{
+	font-weight:bold;
+	padding: 1.25rem;
+	padding-left:1.5rem;
+	padding-right:1.5rem;
+	background-color:#303030;
+	color:#E3E3E3;
+	font-size:120%;
+	margin:0;
+	}
+nav.main ul li a:focus, nav.main ul li a:hover{
+	background-color:#151515;
+	color:#fff;
+	}
+div.center-content {
+	margin: 0 auto;
+	max-width: 75rem;
+	clear:both;
+}
+div.sidebar {
+	min-width:16rem;
+	background-color:#767676;
+	float:left;
+	min-height:60rem;
+}
+nav.section ul {
+	padding:0;
+	margin:0;
+}
+nav.section ul li {
+	list-style-type:none;
+}
+nav.section ul li a{
+	display:block;
+	padding: 1rem .5rem;
+	padding-left:2rem;
+	text-decoration:none;
+	font-size:120%;
+	font-weight:bold;
+}
+nav.section ul li a:focus, nav.section ul li a:hover{
+	background-color:#151515;
+	color:#fff;
+	}
+nav.section ul li p{
+	padding: 1rem .5rem;
+	padding-left:2rem;
+	font-size:120%;
+	font-weight:bold;
+	margin:0;
+	background-color:#303030;
+	color:#E3E3E3;
+}
+nav.section h2 {
+	padding-left:1rem;
+	padding-top:1.5rem;
+	padding-bottom:1.25rem;
+	margin:0;
+	border-bottom:thick solid;
+	border-bottom-color:#101010;
+}
+div.breadcrumbs {
+	margin-top:1rem;
+}
+div.breadcrumbs ul {
+	padding:0;
+	margin:0;
+}
+div.breadcrumbs ul li {
+	list-style-type:none;
+	display:inline;
+}
+
+div.breadcrumbs ul li a {
+	padding:.5rem;
+}
+div.breadcrumbs ul li a:focus, div.breadcrumbs ul li a:hover{
+	background-color:#151515;
+	color:#fff;
+}
+div.breadcrumbs ul li span.divider{
+	border-right: thin solid #1D1D1D;
+}
+a#maincontent {
+	padding:0;
+}
+main {
+	float:right;
+	width:57rem;
+}
+h1 {
+	font-size:260%;
+}
+footer {
+	float:left;
+	background-color:#ccc;
+	width:100%;
+	min-height:3rem;
+}
+div.footer-content{
+	margin-top:1rem;
+}
+div.copyright {
+	display:block;
+	float:left;
+	margin-left: 3rem;
+}
+footer ul {
+	float:right;
+	padding:0;
+	margin:0;
+}
+footer ul li {
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding-right: 2rem;
+}
+footer ul li a {
+	padding:.5rem;
+}
+footer ul li a:focus, footer ul li a:hover{
+	background-color:#151515;
+	color:#fff;
+}
+</style>
+</head>
+
+<body>
+<a href="#maincontent" id="skip">Skip to main content</a>
+<header>
+	<div class="center">
+		<div class="logo"><img src="gear3.png"></div>
+        <p class="company-name">Widget <span class="indent">Bank</span></p>
+		<nav class="main" aria-label="main">
+    		<ul>
+        		<li><a href="#">Home</a></li>
+            	<li><a href="#">Services</a></li>
+            	<li><a href="#">Resources</a></li>
+            	<li><p>About Us</p></li>
+            	<li><a href="#">Contact</a></li>
+        	</ul>
+    	</nav>
+    </div>
+</header>
+<div class="center-content">
+	<div class="sidebar">
+		<nav class="section" aria-label="section">
+			<h2>About Us</h2>
+				<ul>
+					<li><p>Company History</p></li>
+					<li><a href="#">Leadership</a></li>
+			    	<li><a href="#">Company Documents</a></li>
+			    	<li><a href="#">Policies</a></li>
+			    	<li><a href="#">Locations</a></li>
+				</ul>
+		</nav>
+	</div>
+	<main>
+    	<div class="breadcrumbs">
+        	<ul>
+            	<li><a href="#">Home</a><span class="divider"></span></li>
+                <li><a href="#">About Us</a><span class="divider"></span></li>
+                <li class="last">Company History</li>
+            </ul>
+    	</div>
+        <div class="main-content">
+        	<a id="maincontent" tabindex="-1"></a>
+        	<h1>Welcome</h1>
+            <p>We are a regional commercial bank that provides a number of services to help your business grow. We have 30 <a href="#">branches</a> in the state, which are all open from 9:00 AM – 5:30pm every week day and Saturday too.</p>
+
+ 
+
+<p>We offer a range of services including</p>
+<ul>
+<li>Bank Accounts</li>
+<li>Commercial Lending</li>
+<li>Savings</li>
+<li>Commerical Real Estate</li>
+<li>Commercial Credit Cards.</li>
+</ul>
+<h2>Special Offers</h2>
+ <p>Take advantage of one of our <a href="#">specials</a> for new accounts. <a href="#">Contact an account represetnative today</a> to open your new commercial services account.</p>
+
+
+
+        </div>
+    </main>
+	<footer>
+    	<div class="footer-content">
+    		<div class="copyright">Copyright &copy; 2017 Interactive Accessibility. All Rights Reserved</div>
+        	<ul>
+        		<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Terms of Use</a></li>
+        	</ul>
+    	</div>
+    </footer>
+</div>
+</body>
+</html>

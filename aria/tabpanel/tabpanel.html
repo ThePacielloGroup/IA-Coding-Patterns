@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"> 
+	<title>tab panel</title>
+	<link rel="stylesheet" type="text/css" href="./tabpanel.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./tabpanel.js"></script>	
+</head>
+<body>
+
+<h1>Tab Panel Example</h1>
+
+<h2>Apples</h2>
+<div class='tabs'>
+	<ul role='tablist' class='tablist'>
+		<li id='tab1' role='tab' aria-selected='true' aria-controls='panel1'>Snacking</li>
+		<li id='tab2' role='tab' aria-selected='false' aria-controls='panel2' data-deletable='true'>Munchable</li>
+		<li id='tab3' role='tab' aria-selected='false' aria-controls='panel3'>Baking (delayed load)</li>
+		<li id='tab4' role='tab' aria-selected='false' aria-controls='panel4'>Salads</li>		
+	</ul>
+	<div id='panel1' class='tabpanel' role='tabpanel' aria-labelledby='tab1'>
+		<div>
+			<ul>
+				<li>Gala</li>
+				<li>Golden Delicious</li>
+				<li>Fuji</li>
+			</ul>
+		</div>
+	</div>
+	<div id='panel2' class='tabpanel' role='tabpanel' aria-labelledby='tab2' hidden='true'>
+		<div>
+			<ul>
+				<li>Gala</li>
+				<li>Golden Delicious</li>
+				<li>Fuji</li>
+			</ul>
+		</div>
+		<h4>Hey, this is a duplicate panel tab and I can be deleted!</h4>
+	</div>	
+	<div id='panel3' class='tabpanel' role='tabpanel' aria-labelledby='tab3' hidden='true'>
+		<div>
+			<ul>
+				<li>Rome Beauty</li>
+				<li>Jonagold</li>
+				<li>Jazz</li>
+			</ul>
+		</div>
+	</div>
+	<div id='panel4' class='tabpanel' role='tabpanel' aria-labelledby='tab4' hidden='true'>
+		<div>
+			<ul>
+				<li>Granny Smith</li>
+				<li>Jonathan</li>
+				<li>Braeburn</li>
+			</ul>
+		</div>
+	</div>						
+</div>
+
+<h3 id='kbd_label'>Keyboard support</h2>
+<table aria-labelledby="kbd_label">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><kbd>tab</kbd></th>
+      <td>Moves focus to the active tab or first focusable in the tab panel.</td>
+    </tr>
+    <tr>
+      <th><kbd>left arrow</kbd></th>
+      <td>Moves focus to the previous tab.</td>
+    </tr>
+    <tr>
+      <th><kbd>right arrow</kbd></th>
+      <td>Moves focus to the next tab.</td>
+    </tr>
+    <tr>
+      <th><kbd>home</kbd></th>
+      <td>Moves focus to the first tab.</td>
+    </tr>
+    <tr>
+      <th><kbd>end</kbd></th>
+      <td>Moves focus to the last tab.</td>
+    </tr>
+    <tr>
+      <th><kbd>delete</kbd></th>
+      <td>If deletion on the selected tab is allowed this will delete that tab element and its associated tab panel.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

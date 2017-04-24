@@ -1,0 +1,22 @@
+.checkbox {
+	padding-left: 10px;
+	padding-top: 10;
+	width: 250px;
+	cursor: pointer;
+	border: 2px transparent solid;
+}
+
+div[role=checkbox]:active {
+  background-color: #bbb;
+}
+  
+div[role=checkbox]:hover {
+   border-color: #777;
+}
+
+div[role=checkbox].focus {
+   border-color: black;
+}
+div{
+    display:inline;
+}
