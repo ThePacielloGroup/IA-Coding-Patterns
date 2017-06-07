@@ -1,0 +1,33 @@
+.field {
+  position:relative;
+  margin-bottom:1em;
+}
+
+.field input {
+  font-size:1em;
+  padding-top:.75em;
+  padding-bottom:.75em;
+  padding-left:0.5em;
+}
+
+.field.hasContent input {
+  padding-top: 1.25em;
+  padding-bottom:.25em;
+}
+
+.field label {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: #666666;
+  font-size:1em;
+  transition: top .2s, left .2s;
+}
+.field.hasContent label {
+  top:.25em;
+  left:.375em;
+  color:#000;
+  font-size: 0.8em;
+  font-weight:bold;
+  transition: top .2s ease-out, left .2s;
+}
